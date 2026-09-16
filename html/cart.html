@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foodie Tales | Cart</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/food-delivery-project/css/common.css">
+  <link rel="stylesheet" href="/food-delivery-project/css/cart.css">
+</head>
+<body class="app-screen">
+  <header class="site-header">
+    <a class="logo" href="index.html"><span>Foodie</span><strong>Tales</strong></a>
+    <nav class="top-nav">
+      <a href="index.html">Home</a>
+      <a href="resturant.html">Hotels</a>
+      <a href="orders.html">Orders</a>
+    </nav>
+    <a class="header-cart" href="cart.html" aria-label="View cart"><i class="fa-solid fa-bag-shopping"></i><span data-cart-count>0</span></a>
+  </header>
+
+  <main class="page-section">
+    <div class="section-heading">
+      <p class="eyebrow">Your Order</p>
+      <h1>Cart Summary</h1>
+    </div>
+    <section class="cart-page-grid">
+      <div class="cart-card" id="cartList"></div>
+      <aside class="cart-panel">
+        <p class="eyebrow">Total</p>
+        <h3 id="cartTotal">Rs. 0</h3>
+        <a class="checkout-btn" href="payment.html">Proceed to Payment</a>
+      </aside>
+    </section>
+  </main>
+
+  <script src="/food-delivery-project/js/common.js"></script>
+  <script src="/food-delivery-project/js/cart.js"></script>
+</body>
+</html>

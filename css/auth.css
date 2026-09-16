@@ -1,0 +1,340 @@
+.auth-screen {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(20, 15, 18, 0.62), rgba(20, 15, 18, 0.88)),
+    url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80") center/cover;
+}
+
+.auth-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.35s ease;
+  pointer-events: none;
+}
+
+.auth-screen:has(.container:hover)::before {
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.container {
+  position: relative;
+  width: min(920px, 100%);
+  height: 570px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 245, 229, 0.96);
+  box-shadow: var(--shadow);
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.container:hover {
+  border-color: rgba(216, 174, 98, 0.85);
+  box-shadow:
+    0 0 26px rgba(216, 174, 98, 0.56),
+    0 0 70px rgba(216, 174, 98, 0.28),
+    var(--shadow);
+  transform: translateY(-2px);
+}
+
+.container h1 {
+  margin: 4px 0 20px;
+  color: var(--ink);
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  line-height: 1;
+}
+
+.container p {
+  margin: 14px 0;
+  color: #6f6257;
+  font-size: 14px;
+}
+
+.brand-mark {
+  margin-bottom: 20px;
+  color: var(--gold);
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+form {
+  width: 100%;
+}
+
+.form-box {
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  padding: 42px;
+  color: var(--ink);
+  text-align: center;
+  background: var(--cream);
+  transition: 0.6s ease-in-out 1.2s, visibility 0s 1s;
+}
+
+.container.active .form-box {
+  right: 50%;
+}
+
+.form-box.register {
+  visibility: hidden;
+}
+
+.container.active .form-box.register {
+  visibility: visible;
+}
+
+.input-box {
+  position: relative;
+  margin: 15px 0;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 14px 48px 14px 18px;
+  color: var(--ink);
+  border: 1px solid rgba(90, 31, 45, 0.12);
+  border-radius: 8px;
+  outline: none;
+  background: #f2e5d0;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.input-box input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(216, 174, 98, 0.18);
+}
+
+.input-box input::placeholder {
+  color: #7b6d61;
+  font-weight: 400;
+}
+
+.input-box i {
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  color: var(--wine);
+  transform: translateY(-50%);
+}
+
+.forgot-link {
+  margin: -8px 0 18px;
+  text-align: right;
+}
+
+.forgot-link a {
+  color: var(--wine);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.btn {
+  width: 100%;
+  height: 48px;
+  color: var(--ink);
+  border: 0;
+  border-radius: 8px;
+  background: var(--gold);
+  box-shadow: 0 14px 30px rgba(90, 31, 45, 0.2);
+  font-size: 15px;
+  font-weight: 700;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn:hover {
+  background: #efc878;
+  transform: translateY(-1px);
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  color: var(--wine);
+  border: 1px solid rgba(90, 31, 45, 0.2);
+  border-radius: 8px;
+  font-size: 19px;
+}
+
+.social-icons a:hover {
+  color: var(--ink);
+  border-color: var(--gold);
+  background: rgba(216, 174, 98, 0.18);
+}
+
+.toggle-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.toggle-box::before {
+  content: "";
+  position: absolute;
+  left: -250%;
+  z-index: 2;
+  width: 300%;
+  height: 100%;
+  border-radius: 140px;
+  background:
+    linear-gradient(rgba(90, 31, 45, 0.86), rgba(20, 15, 18, 0.92)),
+    url("https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1400&q=80") center/cover;
+  transition: 1.8s ease-in-out;
+}
+
+.container.active .toggle-box::before {
+  left: 50%;
+}
+
+.toggle-panel {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+  padding: 40px;
+  color: var(--cream);
+  text-align: center;
+  transition: 0.6s ease-in-out;
+}
+
+.toggle-panel h1 {
+  color: var(--cream);
+}
+
+.toggle-panel p {
+  max-width: 280px;
+  margin-bottom: 22px;
+  color: #f0dcc0;
+}
+
+.toggle-panel.toggle-left {
+  left: 0;
+  transition-delay: 1.2s;
+}
+
+.container.active .toggle-panel.toggle-left {
+  left: -50%;
+  transition-delay: 0.6s;
+}
+
+.toggle-panel.toggle-right {
+  right: -50%;
+  transition-delay: 0.6s;
+}
+
+.container.active .toggle-panel.toggle-right {
+  right: 0;
+  transition-delay: 1.2s;
+}
+
+.toggle-panel .btn {
+  width: 160px;
+  color: var(--cream);
+  border: 1px solid var(--gold);
+  background: transparent;
+  box-shadow: none;
+}
+
+.toggle-panel .btn:hover {
+  color: var(--ink);
+  background: var(--gold);
+}
+
+@media screen and (max-width: 650px) {
+  .auth-screen {
+    padding: 0;
+  }
+
+  .container {
+    min-height: 100vh;
+    height: 100vh;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .form-box {
+    bottom: 0;
+    width: 100%;
+    height: 70%;
+    padding: 26px;
+  }
+
+  .container.active .form-box {
+    right: 0;
+    bottom: 30%;
+  }
+
+  .toggle-box::before {
+    top: -270%;
+    left: 0;
+    width: 100%;
+    height: 300%;
+    border-radius: 20vw;
+  }
+
+  .container.active .toggle-box::before {
+    top: 70%;
+    left: 0;
+  }
+
+  .toggle-panel {
+    width: 100%;
+    height: 30%;
+    padding: 22px;
+  }
+
+  .toggle-panel.toggle-left {
+    top: 0;
+  }
+
+  .container.active .toggle-panel.toggle-left {
+    top: -30%;
+    left: 0;
+  }
+
+  .toggle-panel.toggle-right {
+    right: 0;
+    bottom: -30%;
+  }
+
+  .container.active .toggle-panel.toggle-right {
+    bottom: 0;
+  }
+
+  .container h1 {
+    font-size: 32px;
+  }
+
+  .brand-mark {
+    margin-bottom: 8px;
+  }
+}

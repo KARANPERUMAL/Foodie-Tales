@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foodie Tales | Menu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/food-delivery-project/css/common.css">
+  <link rel="stylesheet" href="/food-delivery-project/css/menu.css">
+</head>
+<body class="app-screen">
+  <header class="site-header">
+    <a class="logo" href="index.html"><span>Foodie</span><strong>Tales</strong></a>
+    <nav class="top-nav">
+      <a href="index.html">Home</a>
+      <a href="resturant.html">Hotels</a>
+      <a href="orders.html">Orders</a>
+      <a href="login.html">Login</a>
+    </nav>
+    <a class="header-cart" href="cart.html" aria-label="View cart"><i class="fa-solid fa-bag-shopping"></i><span data-cart-count>0</span></a>
+  </header>
+
+  <main class="menu-view">
+    <a class="back-button" href="resturant.html"><i class="fa-solid fa-arrow-left"></i>Back to hotels</a>
+    <div class="menu-hero" id="menuHero"></div>
+    <div class="menu-layout">
+      <aside class="category-panel">
+        <p class="eyebrow">Menu</p>
+        <div class="category-list" id="categoryList"></div>
+      </aside>
+      <div class="menu-items" id="menuItems"></div>
+      <aside class="cart-panel">
+        <p class="eyebrow">Your Order</p>
+        <h3>Cart Summary</h3>
+        <div id="cartItems" class="cart-items"></div>
+        <div class="cart-total">
+          <span>Total</span>
+          <strong id="cartTotal">Rs. 0</strong>
+        </div>
+        <a class="checkout-btn" href="cart.html">Checkout</a>
+      </aside>
+    </div>
+  </main>
+
+  <script src="/food-delivery-project/js/common.js"></script>
+  <script src="/food-delivery-project/js/menu.js"></script>
+</body>
+</html>

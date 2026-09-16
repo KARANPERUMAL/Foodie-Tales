@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foodie Tales | Payment</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/food-delivery-project/css/common.css">
+  <link rel="stylesheet" href="/food-delivery-project/css/payment.css">
+</head>
+<body class="app-screen">
+  <header class="site-header">
+    <a class="logo" href="index.html"><span>Foodie</span><strong>Tales</strong></a>
+    <nav class="top-nav">
+      <a href="index.html">Home</a>
+      <a href="resturant.html">Hotels</a>
+      <a href="orders.html">Orders</a>
+    </nav>
+    <a class="header-cart" href="cart.html" aria-label="View cart"><i class="fa-solid fa-bag-shopping"></i><span data-cart-count>0</span></a>
+  </header>
+
+  <main class="page-section payment-page-grid">
+    <section>
+      <div class="section-heading">
+        <p class="eyebrow">Payment</p>
+        <h1>Finish your order.</h1>
+      </div>
+      <form class="payment-card form-grid" id="paymentForm">
+        <label>Full Name<input name="name" type="text" required placeholder="Enter your name"></label>
+        <label>Delivery Address<textarea name="address" required placeholder="Door no, street, city"></textarea></label>
+        <label>Payment Method<select name="paymentMethod" required><option>Cash on Delivery</option><option>UPI</option><option>Card</option></select></label>
+        <button class="button" type="submit">Place Order</button>
+      </form>
+    </section>
+    <aside class="cart-panel">
+      <p class="eyebrow">Payable</p>
+      <h3 id="paymentTotal">Rs. 0</h3>
+      <div id="paymentItems" class="cart-items"></div>
+    </aside>
+  </main>
+
+  <script src="/food-delivery-project/js/common.js"></script>
+  <script src="/food-delivery-project/js/payment.js"></script>
+</body>
+</html>
